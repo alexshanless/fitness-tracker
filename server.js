@@ -1,8 +1,8 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-var moment = require('moment');
-moment().format();
+require('dotenv').config()
+
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-const mongoUri = process.env.MONGODB_URI || "mongodb://localhost/workoutdb";
+const mongoUri = process.env.MONGODB_URI || "mongodb://localhost/runboy1";
 
 mongoose.connect(mongoUri, {
     useNewUrlParser: true,
